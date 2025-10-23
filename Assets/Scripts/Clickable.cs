@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -11,7 +12,7 @@ public class Clickable : MonoBehaviour
     //
     // See an example in `ClickTracker.cs`, which is on a UI
     // object titled `Tracker Text (TMP)`.
-    public static int Clicks = 0;
+    
 
     /// <summary>
     /// This function is called when the mouse button clicks
@@ -19,7 +20,7 @@ public class Clickable : MonoBehaviour
     /// </summary>
     private void OnMouseDown()
     {
-        Clicks += 1;  // add one point
+        GlobalInjector.inventoryManager.Clicks += 1;  // add one point
     }
 
 }

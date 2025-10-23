@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: DormShopItem
   m_EditorClassIdentifier: 
   itemName: Dorm
-  icon: {fileID: 0}
-  cost: 0
-  clicksPerSecond: 0
+  icon: {fileID: 21300000, guid: 309e2dbd1fb77405ab16357ed83eade0, type: 3}
+  cost: 1
+  clicksPerSecond: 1
