@@ -21,6 +21,15 @@ public class Clickable : MonoBehaviour
     private void OnMouseDown()
     {
         GlobalInjector.inventoryManager.Clicks += 1;  // add one point
+        
+        // Play click sound
+        if (AudioManager.Instance != null)
+        {
+            AudioManager.Instance.PlayClickSound();
+        }
+        
+        // Trigger UI animation
+        StanfordUIController.TriggerClickAnimation();
     }
 
 }

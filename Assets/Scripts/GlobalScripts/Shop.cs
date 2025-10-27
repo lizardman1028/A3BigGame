@@ -22,6 +22,13 @@ public class Shop : MonoBehaviour
     
     inventoryManager.Clicks -= shopItems[itemIndex].cost;
     inventoryManager.AddShopItemToInventory(shopItems[itemIndex]);
+    
+    // Play unlock sound when successfully purchasing an item
+    if (AudioManager.Instance != null)
+    {
+        AudioManager.Instance.PlayUnlockSound();
+    }
+    
     return true;
   }
 
