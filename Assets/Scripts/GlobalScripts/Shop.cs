@@ -5,8 +5,10 @@ using Unity.VisualScripting;
 using UnityEditor.Experimental.GraphView;
 using UnityEngine;
 
-public class Shop : MonoBehaviour
-{
+public class Shop : MonoBehaviour {
+  [SerializeField]
+  private GameObject bouncerPrefab;
+  
   public List<ShopItem>  shopItems;
 
   public int ShopItemToIndex(ShopItem shopItem) {
@@ -28,6 +30,9 @@ public class Shop : MonoBehaviour
     {
         AudioManager.Instance.PlayUnlockSound();
     }
+    
+    var instantiatedThing =Instantiate(bouncerPrefab, Vector2.zero, Quaternion.identity);
+    instantiatedThing.GetComponent<SpriteRenderer>().sprite = shopItems[itemIndex].icon;
     
     return true;
   }
